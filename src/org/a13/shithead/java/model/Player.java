@@ -11,6 +11,9 @@ public class Player {
 
 	public Player(String name) {
 		this.name = name;
+		this.ownCard=new ArrayList<Card>();
+		this.publicCard=new ArrayList<Card>();
+		this.secretCard=new ArrayList<Card>();
 	}
 
 	public String getName() {
@@ -49,4 +52,11 @@ public class Player {
 		return ownCard.size() + publicCard.size() + secretCard.size();
 	}
 
+	public String toString(){
+		String string="";
+		for(Card c:ownCard){
+			string+=c;
+		}
+		return name+" own: "+string;
+	}
 }
